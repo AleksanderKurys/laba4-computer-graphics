@@ -8,10 +8,11 @@ namespace Laba4
 {
     class DrawingUtils
     {
-        public static Vector2f GetIntersectionPoint(Line lineA, Line lineB)
+        public static Vector2f GetIntersectionPoint(Line line1, Line line2)
         {
-            float intersectionX = (lineB.c - lineA.c) / (lineA.k - lineB.k);
-            float intersectionY = lineA.k * intersectionX + lineA.c;
+            float det = line1.A * line2.B - line2.A * line1.B; //A1B2 - A2B1
+            float intersectionX = (line2.B * line1.C - line1.B * line2.C) / det;
+            float intersectionY = (line1.A * line2.C - line2.A * line1.C) / det;
             return new Vector2f(intersectionX, intersectionY);
         }
 
@@ -39,6 +40,23 @@ namespace Laba4
             }
 
             return vertexes;
+        }
+
+        public static Vector2f GetPointInsideFigure(Figure figure)
+        {
+            var vertexes = DrawingUtils.GetFigureVertexes(figure);
+
+            Vector2f pointInsideFigure = new Vector2f(0, 0);
+            foreach (var vertex in vertexes)
+            {
+                pointInsideFigure.X += vertex.X;
+                pointInsideFigure.Y += vertex.Y;
+            }
+
+            pointInsideFigure.X /= vertexes.Count;
+            pointInsideFigure.Y /= vertexes.Count;
+
+            return pointInsideFigure;
         }
     }
 }

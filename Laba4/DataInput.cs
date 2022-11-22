@@ -67,7 +67,7 @@ namespace Laba4
 
         private Color? getBackgroundColorFromString(string str)
         {
-            Regex regex = new Regex("^background: k = (.*?), c = (.*?)$");
+            Regex regex = new Regex("^background: (.*?)$");
             Match match = regex.Match(str);
 
             try
@@ -148,14 +148,15 @@ namespace Laba4
 
         private Line? getLineFromString(string str)
         {
-            Regex regex = new Regex("^line: k = (.*?), c = (.*?)$");
+            Regex regex = new Regex("^line: A = (.*?), B = (.*?), C = (.*?)$");
             Match match = regex.Match(str);
 
             try
             {
-                float k = float.Parse(match.Groups[1].Value);    // k
-                float c = float.Parse(match.Groups[2].Value);    // c
-                return new Line(k, c);
+                float A = float.Parse(match.Groups[1].Value);    // A
+                float B = float.Parse(match.Groups[2].Value);    // B
+                float C = float.Parse(match.Groups[3].Value);    // C
+                return new Line(A, B, C);        // TODO
 
             }
             catch (Exception ex)

@@ -8,13 +8,15 @@ namespace Laba4
 {
     public struct Line
     {
-        public float k { get; } = 0;
-        public float c { get; } = 0;
+        public float A { get; } = 0;
+        public float B { get; } = 0;
+        public float C { get; } = 0;
 
-        public Line(float k, float c)
+        public Line(float A, float B, float C)
         {
-            this.k = k;
-            this.c = c;
+            this.A = A;
+            this.B = B;
+            this.C = C;
         }
     }
 }

@@ -5,12 +5,12 @@ using SFML.Window;
 using System;
 using System.Collections.Generic;
 
-namespace graphic_lab3
+namespace Laba4
 {
-    internal class Program
+    public class Program
     {
-        static uint width = 800;
-        static uint height = 800;
+        public static uint width = 800;
+        public static uint height = 800;
 
         static RenderWindow renderWindow = new RenderWindow(new SFML.Window.VideoMode(width, height), "Laba 4");
 
@@ -21,19 +21,31 @@ namespace graphic_lab3
             DataInput input = new DataInput("input.txt");
             ParsedInputData data = input.ParseInputFile();
 
-            Drawer drawer = new Drawer(width, height);
+            List<Color[,]> pixelLayers = new List<Color[,]>();
 
-            foreach (var figure in data.layers[0])
+            foreach (var figuresLayer in data.layers)
             {
-                drawer.DrawFigure(figure);
+                Drawer drawer = new Drawer(width, height);
+                foreach (var figure in figuresLayer)
+                {
+                    drawer.DrawFigure(figure, Color.Red, Color.Yellow);
+                }
+                pixelLayers.Add(drawer.drawingLayer);
             }
 
+            var mergedLayers = MergePixelLayers(pixelLayers);
 
-            Image image = new Image(drawer.drawingLayer);
+            Color[,] result = new Color[800, 800];
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    result[i, height - j - 1] = mergedLayers[i, j];
+                }
+            }
+
+            Image image = new Image(result);
             Texture texture = new Texture(image);
             Sprite sprite = new Sprite(texture);
-
-
+            
             renderWindow.SetVerticalSyncEnabled(true);
             renderWindow.Closed += (sender, args) => renderWindow.Close();
             while (renderWindow.IsOpen)
@@ -44,99 +56,23 @@ namespace graphic_lab3
                 renderWindow.Display();
             }
         }
+
+        public static Color[,] MergePixelLayers(List<Color[,]> layers)
+        {
+            Color[,] baseLayer = layers[0];
+
+            for (int i = 1; i < layers.Count; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    for (int k = 0; k < width; k++)
+                    {
+                        baseLayer[j, k] += layers[i][j, k];
+                    }
+                }
+            }
+
+            return baseLayer;
+        }
     }
 }
-
-
-//static void CreateTriangle(Vector2f[] points, Action<Vector2f, Vector2f, Color> drawLine, Action<Vector2i, Vector2f[], Color, Color> fillArea)
-//{
-//    if (points.Length != 3)
-//    {
-//        Console.WriteLine("Треугольник строится по 3 точкам");
-//        return;
-//    }
-//    drawLine?.Invoke(points[0], points[1], Color.Red);
-//    drawLine?.Invoke(points[2], points[1], Color.Red);
-//    drawLine?.Invoke(points[2], points[0], Color.Red);
-//    Vector2i center = (Vector2i)GetMediansIntersection(points);
-//    fillArea?.Invoke(center, points, Color.Yellow, Color.Red);
-//}
-
-//static List<Vector2f[]> SplitTriangleWithMedians(Vector2f[] points)
-//{
-//    List<Vector2f[]> triangles = new List<Vector2f[]>();
-//    Vector2f center = GetMediansIntersection(points);
-//    Vector2f[] sideMiddles = {
-//                GetLineMiddle(points[0], points[1]),
-//                GetLineMiddle(points[1], points[2]),
-//                GetLineMiddle(points[2], points[0])
-//            };
-//    Vector2f currentMiddle = sideMiddles[2];
-//    for (int i = 0; i < points.Length; i++)
-//    {
-//        Vector2f[] triangle1 =
-//        {
-//                    center,
-//                    points[i],
-//                    currentMiddle
-//                };
-//        triangles.Add(triangle1);
-//        currentMiddle = sideMiddles[i];
-//        Vector2f[] triangle2 =
-//        {
-//                    center,
-//                    points[i],
-//                    currentMiddle
-//                };
-//        triangles.Add(triangle2);
-//    }
-//    return triangles;
-//}
-
-//// (-1; -1) - bad value
-//static Vector2f getTrianglePointWithinWindow(Vector2f[] trianglePoints)
-//{
-//    Vector2f center = GetMediansIntersection(trianglePoints);
-//    Vector2f pointInsideWindow = new Vector2f(-1, -1);
-//    if (PointInsideWindow(trianglePoints[0]))
-//    {
-//        pointInsideWindow = trianglePoints[0];
-//    }
-//    else if (PointInsideWindow(trianglePoints[1]))
-//    {
-//        pointInsideWindow = trianglePoints[1];
-//    }
-//    else if (PointInsideWindow(trianglePoints[2]))
-//    {
-//        pointInsideWindow = trianglePoints[2];
-//    }
-//    while (!PointInsideWindow(center))
-//    {
-//        center = GetLineMiddle(center, pointInsideWindow);
-//    }
-//    return center;
-//}
-
-//static bool PointInsideWindow(Vector2f point)
-//{
-//    return point.X >= 0 && point.X <= width && point.Y >= 0 && point.Y <= height;
-//}
-
-//static Vector2f GetMediansIntersection(Vector2f[] points)
-//{
-//    if (points.Length != 3)
-//    {
-//        Console.WriteLine("Это не координаты вершин треугольника!");
-//        return new Vector2f(0, 0);
-//    }
-//    float intesectionX = (points[0].X + points[1].X + points[2].X) / 3;
-//    float intesectionY = (points[0].Y + points[1].Y + points[2].Y) / 3;
-//    return new Vector2f(intesectionX, intesectionY);
-//}
-
-
-
-//private static void DrawLabTriangle(Vector2f[] pointsTriangleA)
-//{
-//    //CreateTriangle(pointsTriangleA, ddaLine, recursiveFill);
-//}

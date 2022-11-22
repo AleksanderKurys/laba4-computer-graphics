@@ -1,21 +1,23 @@
 background: #00ff00
-layersNumber: 1
+layersNumber: 2
 
-layerIndex: 1
-figuresNumber: 3
+layerIndex: 0
+figuresNumber: 1
 
 figureSides: 4
-line: k = 1, c = -1
-line: k = 0, c = 6
-line: k = 1.25, c = -10.25
-line: k = 0, c = 1
+line: A = 1, B = 0, C = 150
+line: A = 0, B = 1, C = 250
+line: A = 1, B = 0, C = 250
+line: A = 0, B = 1, C = 150
 
-figureSides: 3
-line: k = 2, c = 4
-line: k = -4, c = 52
-line: k = 0, c = 12
+layerIndex: 1
+figuresNumber: 1
 
-figureSides: 3
-line: k = -4, c = 142
-line: k = -0.75, c = 44.5
-line: k = 0.33, c = 3.33
+figureSides: 4
+line: A = 1, B = 0, C = 100
+line: A = 0, B = 1, C = 200
+line: A = 1, B = 0, C = 200
+line: A = 0, B = 1, C = 100
+
+
+
