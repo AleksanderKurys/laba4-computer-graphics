@@ -1,0 +1,21 @@
+background: #00ff00
+layersNumber: 1
+
+layerIndex: 1
+figuresNumber: 3
+
+figureSides: 4
+line: k = 1, c = -1
+line: k = 0, c = 6
+line: k = 1.25, c = -10.25
+line: k = 0, c = 1
+
+figureSides: 3
+line: k = 2, c = 4
+line: k = -4, c = 52
+line: k = 0, c = 12
+
+figureSides: 3
+line: k = -4, c = 142
+line: k = -0.75, c = 44.5
+line: k = 0.33, c = 3.33

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SFML.Net" />
+    <None Remove="sfml-system" />
+    <None Remove="SFML.Graphics" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SFML.Net" Version="2.5.0" />
+    <PackageReference Include="sfml-system" Version="2.4.2" />
+    <PackageReference Include="SFML.Graphics" Version="2.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\net6.0\input.txt">
+      <Link>input.txt</Link>
+    </None>
+  </ItemGroup>
+</Project>
