@@ -1,8 +1,18 @@
 ﻿<Properties StartupConfiguration="{E27D0EB7-768D-4A06-BCC6-0E2A098040EC}|Default">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Laba4/Program.cs">
     <Files>
-      <File FileName="Laba4/Program.cs" Line="185" Column="1" />
+      <File FileName="Laba4/Program.cs" Line="70" Column="45" />
+      <File FileName="Laba4/Drawer.cs" Line="42" Column="48" />
+      <File FileName="Laba4/DrawingUtils.cs" Line="15" Column="81" />
+      <File FileName="Laba4/IDrawingTool.cs" Line="15" Column="1" />
+      <File FileName="Laba4/bin/Debug/net6.0/input.txt" Line="11" Column="27" />
+      <File FileName="Laba4/Line.cs" Line="22" Column="2" />
+      <File FileName="Laba4/DataInput.cs" Line="159" Column="39" />
+      <File FileName="Laba4/bin/Debug/net6.0/input.txt" Line="11" Column="27" NotebookId="1" />
+      <File FileName="Laba4/ParsedInputData.cs" Line="13" Column="6" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +30,5 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Laba4 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

@@ -24,7 +24,6 @@ namespace Laba4
             parsedInputData.background = (Color)getBackgroundColorFromString(data[0]);
             int layersNumber = (int)getLayersNumberFromString(data[1]);
 
-
             int i = 3;
 
             for (int layerIndex = 0; layerIndex < layersNumber; layerIndex++)
@@ -67,13 +66,16 @@ namespace Laba4
 
         private Color? getBackgroundColorFromString(string str)
         {
-            Regex regex = new Regex("^background: (.*?)$");
+            Regex regex = new Regex("^background: R = (.*?), G = (.*?), B = (.*?), A = (.*?)$");
             Match match = regex.Match(str);
 
             try
             {
-                string backgroundColor = match.Groups[1].Value;    // backgroundColor
-                return new Color();
+                byte red = byte.Parse(match.Groups[1].Value);    // Red
+                byte green = byte.Parse(match.Groups[2].Value);    // Green
+                byte blue = byte.Parse(match.Groups[3].Value);    // Blue
+                byte alpha = byte.Parse(match.Groups[4].Value);    // Alpha
+                return new Color(red, green, blue, alpha);
             }
             catch (Exception ex)
             {
