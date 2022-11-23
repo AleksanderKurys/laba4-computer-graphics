@@ -1,4 +1,4 @@
-background: R = 200, G = 100, B = 128, A = 255
+background: R = 255, G = 100, B = 128, A = 255
 layersNumber: 5
 
 layerIndex: 0
