@@ -10,17 +10,17 @@ namespace Laba4
     {
         private uint drawingAreaWidth;
         private uint drawingAreaHeight;
-        public Color[,] drawingLayer { get; private set; }
+        public SFML.Graphics.Color[,] drawingLayer { get; private set; }
 
         public Drawer(uint drawingAreaWidth, uint drawingAreaHeight)
         {
             this.drawingAreaWidth = drawingAreaWidth;
             this.drawingAreaHeight = drawingAreaHeight;
 
-            drawingLayer = new Color[drawingAreaHeight, drawingAreaWidth];
+            drawingLayer = new SFML.Graphics.Color[drawingAreaHeight, drawingAreaWidth];
         }
 
-        public void ddaLine(Vector2f start, Vector2f end, Color color)
+        public void ddaLine(Vector2f start, Vector2f end, SFML.Graphics.Color color)
         {
             Vector2i startRounded = new Vector2i((int)Math.Ceiling(start.X), (int)Math.Ceiling(start.Y));
             Vector2i endRounded = new Vector2i((int)Math.Ceiling(end.X), (int)Math.Ceiling(end.Y));
@@ -45,7 +45,7 @@ namespace Laba4
             }
         }
 
-        public void recursiveFill(Vector2i startPoint, Color fillColor, Color borderColor)
+        public void recursiveFill(Vector2i startPoint, SFML.Graphics.Color fillColor, SFML.Graphics.Color borderColor)
         {
             Vector2f floatStartPoint = new Vector2f(startPoint.X, startPoint.Y);
             Stack<Vector2i> points = new Stack<Vector2i>();
@@ -75,7 +75,7 @@ namespace Laba4
             }
         }
 
-        public void DrawFigure(Figure figure, Color borderColor, Color? fillColor = null)
+        public void DrawFigure(Figure figure, SFML.Graphics.Color borderColor, SFML.Graphics.Color? fillColor = null)
         {
             List<Vector2f> vertexes = DrawingUtils.GetFigureVertexes(figure);
 
@@ -104,13 +104,13 @@ namespace Laba4
 
                 Vector2i fillStartPoint = new Vector2i((int)Math.Round(pointInsideFigure.X), (int)Math.Round(pointInsideFigure.Y));
 
-                if (fillColor != null) recursiveFill(fillStartPoint, (Color)fillColor, borderColor);
+                if (fillColor != null) recursiveFill(fillStartPoint, (SFML.Graphics.Color)fillColor, borderColor);
             }
 
             DrawTriangulationLines(figure, borderColor);
         }
 
-        public void DrawTriangulationLines(Figure figure, Color borderColor)
+        public void DrawTriangulationLines(Figure figure, SFML.Graphics.Color borderColor)
         {
             var vertexes = DrawingUtils.GetFigureVertexes(figure);
 

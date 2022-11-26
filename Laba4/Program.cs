@@ -14,21 +14,22 @@ namespace Laba4
 
         static RenderWindow renderWindow = new RenderWindow(new SFML.Window.VideoMode(width, height), "Laba 4");
         static ParsedInputData data;
+        static Random random = new Random();
 
         static void Main(string[] args)
         {
             renderWindow.SetVerticalSyncEnabled(true);
             renderWindow.Closed += (sender, args) => renderWindow.Close();
 
-            IDrawingTool drawingTool = new SFMLDrawingTool();
+            IDrawingTool drawingTool = new WindowsDrawingTool((int)width, (int)height);
 
             DataInput input = new DataInput("input.txt");
             data = input.ParseInputFile();
 
-            List<Color[,]> pixelLayers = new List<Color[,]>();
+            List<SFML.Graphics.Color[,]> pixelLayers = new List<SFML.Graphics.Color[,]>();
 
             Drawer backgroundDrawer = new Drawer(width, height);
-            backgroundDrawer.recursiveFill(new Vector2i(0, 0), data.background, Color.Black);
+            backgroundDrawer.recursiveFill(new Vector2i(0, 0), data.background, SFML.Graphics.Color.Black);
             pixelLayers.Add(backgroundDrawer.drawingLayer);
 
             foreach (var figuresLayer in data.layers)
@@ -36,31 +37,37 @@ namespace Laba4
                 Drawer drawer = new Drawer(width, height);
                 foreach (var figure in figuresLayer)
                 {
-                    drawer.DrawFigure(figure, Color.Red, Color.Yellow);
+                    drawer.DrawFigure(figure, randomColor(), randomColor());
                 }
                 pixelLayers.Add(drawer.drawingLayer);
             }
 
             var mergedLayer = MergePixelLayers(pixelLayers);
 
-            Color[,] result = ReverseYPixelLayer(mergedLayer);
+            SFML.Graphics.Color[,] result = ReverseYPixelLayer(mergedLayer);
 
-            Image image = new Image(result);
-            Texture texture = new Texture(image);
-            Sprite sprite = new Sprite(texture);
-
-            while (renderWindow.IsOpen)
-            {
-                renderWindow.DispatchEvents();
-                renderWindow.Clear(Color.Black);
-                renderWindow.Draw(sprite);
-                renderWindow.Display();
+            for (int i = 0; i < result.GetLength(0); i++) {
+                for (int j = 0; j < result.GetLength(1); j++) {
+                    drawingTool.DrawPixel(result[i, j], new Vector2i(i, j));
+                }
             }
-        }
 
-        private static Color[,] ReverseYPixelLayer(Color[,] mergedLayer)
+			SFML.Graphics.Image image = new SFML.Graphics.Image(result);
+			Texture texture = new Texture(image);
+			Sprite sprite = new Sprite(texture);
+
+			while (renderWindow.IsOpen)
+			{
+				renderWindow.DispatchEvents();
+				renderWindow.Clear(SFML.Graphics.Color.Black);
+				renderWindow.Draw(sprite);
+				renderWindow.Display();
+			}
+		}
+
+        private static SFML.Graphics.Color[,] ReverseYPixelLayer(SFML.Graphics.Color[,] mergedLayer)
         {
-            Color[,] result = new Color[800, 800];
+            SFML.Graphics.Color[,] result = new SFML.Graphics.Color[800, 800];
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
@@ -72,42 +79,47 @@ namespace Laba4
             return result;
         }
 
-        public static Color[,] MergePixelLayers(List<Color[,]> layers)
+        public static SFML.Graphics.Color[,] MergePixelLayers(List<SFML.Graphics.Color[,]> layers)
         {
-            Color[,] baseLayer = new Color[height, width];
+            SFML.Graphics.Color[,] baseLayer = new SFML.Graphics.Color[height, width];
 
             for (int i = 1; i < layers.Count; i++)
             {
-                Color[,] topLayer = layers[i];
+                SFML.Graphics.Color[,] topLayer = layers[i];
                 for (int j = 0; j < height; j++)
                 {
                     for (int k = 0; k < width; k++)
                     {
-                        Color currentPixel = topLayer[j, k];
-                        if (currentPixel != Color.Transparent && baseLayer[j, k] != Color.Transparent)
+                        SFML.Graphics.Color currentPixel = topLayer[j, k];
+                        if (currentPixel != SFML.Graphics.Color.Transparent && baseLayer[j, k] != SFML.Graphics.Color.Transparent)
                         {
-                            baseLayer[j, k].R += (byte)(currentPixel.B / 5);
-                            baseLayer[j, k].G += (byte)(currentPixel.G / 5);
-                            baseLayer[j, k].B += (byte)(currentPixel.R / 5);
-                            baseLayer[j, k].A = currentPixel.A;
+                            if (true)
+                            {
+                                baseLayer[j, k].R = (byte)((currentPixel.R + baseLayer[j, k].R) % byte.MaxValue);
+                                baseLayer[j, k].G = (byte)((currentPixel.G + baseLayer[j, k].G) % byte.MaxValue);
+                                baseLayer[j, k].B = (byte)((currentPixel.B + baseLayer[j, k].B) % byte.MaxValue);
+                                baseLayer[j, k].A = currentPixel.A;
+                            }
+                            else {
+                                baseLayer[j, k] = currentPixel;
+                            }
                         }
-                        else if (currentPixel != Color.Transparent && baseLayer[j, k] == Color.Transparent)
+                        else if (currentPixel != SFML.Graphics.Color.Transparent && baseLayer[j, k] == SFML.Graphics.Color.Transparent)
                         {
                             baseLayer[j, k] = currentPixel;
                         }
-
-                        if (i > 0 && k % 100 == 0 && renderWindow.IsOpen && currentPixel != Color.Transparent )
-                        {
-                            Image image = new Image(ReverseYPixelLayer(baseLayer));
-                            Texture texture = new Texture(image);
-                            Sprite sprite = new Sprite(texture);
-
-                            renderWindow.DispatchEvents();
-                            renderWindow.Clear(Color.Black);
-                            renderWindow.Draw(sprite);
-                            renderWindow.Display();
-                        }
+                        
+                        
+                       
                     }
+                    SFML.Graphics.Image image = new SFML.Graphics.Image(ReverseYPixelLayer(baseLayer));
+                    Texture texture = new Texture(image);
+                    Sprite sprite = new Sprite(texture);
+
+                    renderWindow.DispatchEvents();
+                    renderWindow.Clear(SFML.Graphics.Color.Black);
+                    renderWindow.Draw(sprite);
+                    renderWindow.Display();
                 }
             }
 
@@ -115,10 +127,20 @@ namespace Laba4
             {
                 for (int j = 0; j < width; j++)
                 {
-                    if (baseLayer[i, j] == Color.Transparent) baseLayer[i, j] = layers[0][i,j];
+                    if (baseLayer[i, j] == SFML.Graphics.Color.Transparent) baseLayer[i, j] = layers[0][i,j];
                 }
             }
             return baseLayer;
         }
+
+        private static SFML.Graphics.Color randomColor()
+        {
+            return new SFML.Graphics.Color((byte)random.Next(255),
+                (byte)random.Next(255),
+                (byte)random.Next(255),
+                255);
+        }
+
     }
+
 }

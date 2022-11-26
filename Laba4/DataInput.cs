@@ -21,7 +21,7 @@ namespace Laba4
             string[] data = File.ReadAllLines(fileName);
 
             ParsedInputData parsedInputData = new ParsedInputData();
-            parsedInputData.background = (Color)getBackgroundColorFromString(data[0]);
+            parsedInputData.background = (SFML.Graphics.Color)getBackgroundColorFromString(data[0]);
             int layersNumber = (int)getLayersNumberFromString(data[1]);
 
             int i = 3;
@@ -64,7 +64,7 @@ namespace Laba4
             return parsedInputData;
         }
 
-        private Color? getBackgroundColorFromString(string str)
+        private SFML.Graphics.Color? getBackgroundColorFromString(string str)
         {
             Regex regex = new Regex("^background: R = (.*?), G = (.*?), B = (.*?), A = (.*?)$");
             Match match = regex.Match(str);
@@ -75,7 +75,7 @@ namespace Laba4
                 byte green = byte.Parse(match.Groups[2].Value);    // Green
                 byte blue = byte.Parse(match.Groups[3].Value);    // Blue
                 byte alpha = byte.Parse(match.Groups[4].Value);    // Alpha
-                return new Color(red, green, blue, alpha);
+                return new SFML.Graphics.Color(red, green, blue, alpha);
             }
             catch (Exception ex)
             {

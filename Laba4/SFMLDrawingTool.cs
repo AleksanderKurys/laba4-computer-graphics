@@ -8,7 +8,7 @@ namespace Laba4
 {
     class SFMLDrawingTool : IDrawingTool
     {
-        public void DrawPixel(Color color, Vector2i position)
+        public void DrawPixel(SFML.Graphics.Color color, Vector2i position)
         {
             // draw pixel using windows.h 
         }

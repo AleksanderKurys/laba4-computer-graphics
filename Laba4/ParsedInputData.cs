@@ -11,7 +11,7 @@ namespace Laba4
 
     public struct ParsedInputData
     {
-        public Color background = Color.Black;
+        public SFML.Graphics.Color background = SFML.Graphics.Color.Black;
         public List<LayerFigures> layers = new List<LayerFigures>();
 
         public ParsedInputData()
