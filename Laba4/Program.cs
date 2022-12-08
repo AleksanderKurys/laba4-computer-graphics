@@ -32,7 +32,7 @@ namespace Laba4
             backgroundDrawer.recursiveFill(new Vector2i(0, 0), data.background, SFML.Graphics.Color.Black);
             pixelLayers.Add(backgroundDrawer.drawingLayer);
 
-            foreach (var figuresLayer in data.layers)
+/*            foreach (var figuresLayer in data.layers)
             {
                 Drawer drawer = new Drawer(width, height);
                 foreach (var figure in figuresLayer)
@@ -40,7 +40,12 @@ namespace Laba4
                     drawer.DrawFigure(figure, randomColor(), randomColor());
                 }
                 pixelLayers.Add(drawer.drawingLayer);
-            }
+            }*/
+
+            Drawer drawer = new Drawer(width, height);
+            pixelLayers.Add(drawer.drawingLayer);
+
+            drawer.DrawFigure(new Clipper().ClipFigures(data.layers[1][0], data.layers[2][0]), randomColor(), randomColor());
 
             var mergedLayer = MergePixelLayers(pixelLayers);
 
@@ -108,10 +113,8 @@ namespace Laba4
                         {
                             baseLayer[j, k] = currentPixel;
                         }
-                        
-                        
-                       
                     }
+
                     SFML.Graphics.Image image = new SFML.Graphics.Image(ReverseYPixelLayer(baseLayer));
                     Texture texture = new Texture(image);
                     Sprite sprite = new Sprite(texture);

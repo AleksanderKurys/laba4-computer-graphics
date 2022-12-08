@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj": {}
+    "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj": {
+    "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
+        "projectUniqueName": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
         "projectName": "Laba4",
-        "projectPath": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
-        "packagesPath": "C:\\Users\\ElizabethNN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\obj\\",
+        "projectPath": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
+        "packagesPath": "C:\\Users\\Danila\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\CodeEditors\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ElizabethNN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Danila\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -76,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

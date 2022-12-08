@@ -257,10 +257,14 @@
           "SFML.Window": "2.5.0"
         },
         "compile": {
-          "lib/netstandard2.0/SFML.Audio.dll": {}
+          "lib/netstandard2.0/SFML.Audio.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/SFML.Audio.dll": {}
+          "lib/netstandard2.0/SFML.Audio.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SFML.Graphics/2.5.0": {
@@ -271,10 +275,14 @@
           "SFML.Window": "2.5.0"
         },
         "compile": {
-          "lib/netstandard2.0/SFML.Graphics.dll": {}
+          "lib/netstandard2.0/SFML.Graphics.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/SFML.Graphics.dll": {}
+          "lib/netstandard2.0/SFML.Graphics.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SFML.Net/2.5.0": {
@@ -292,10 +300,14 @@
           "CSFML": "2.5.0"
         },
         "compile": {
-          "lib/netstandard2.0/SFML.System.dll": {}
+          "lib/netstandard2.0/SFML.System.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/SFML.System.dll": {}
+          "lib/netstandard2.0/SFML.System.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SFML.Window/2.5.0": {
@@ -305,10 +317,14 @@
           "SFML.System": "2.5.0"
         },
         "compile": {
-          "lib/netstandard2.0/SFML.Window.dll": {}
+          "lib/netstandard2.0/SFML.Window.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/SFML.Window.dll": {}
+          "lib/netstandard2.0/SFML.Window.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -656,28 +672,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\": {},
-    "C:\\CodeEditors\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Danila\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
+      "projectUniqueName": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
       "projectName": "Laba4",
-      "projectPath": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
-      "packagesPath": "C:\\Users\\ElizabethNN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\obj\\",
+      "projectPath": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
+      "packagesPath": "C:\\Users\\Danila\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\CodeEditors\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ElizabethNN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Danila\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -731,7 +742,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

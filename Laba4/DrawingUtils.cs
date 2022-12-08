@@ -58,5 +58,20 @@ namespace Laba4
 
             return pointInsideFigure;
         }
+
+        public static Vector2f GetPointInsideFigure(List<Vector2f> vertexes)
+        {
+            Vector2f pointInsideFigure = new Vector2f(0, 0);
+            foreach (var vertex in vertexes)
+            {
+                pointInsideFigure.X += vertex.X;
+                pointInsideFigure.Y += vertex.Y;
+            }
+
+            pointInsideFigure.X /= vertexes.Count;
+            pointInsideFigure.Y /= vertexes.Count;
+
+            return pointInsideFigure;
+        }
     }
 }

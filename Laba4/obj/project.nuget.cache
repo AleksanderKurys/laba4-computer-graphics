@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "xTLo1WKFfbElViTKrjg3Ax6eadempVpzQgY9Jr5nCti2PfhnZBY3w8KLRRBYQTkg2z/C4pdWOvliAlGz6PVkag==",
+  "dgSpecHash": "zjOvOSiNsptV0Eym0ShK5MBn2vXMWIs68r8ZA5oYCuXecEj8dRATPlB2THjFC2Tfa9MTow1vmgWPtb+ooE6XwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ElizabethNN\\source\\repos\\AleksanderKurys\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
+  "projectFilePath": "C:\\Users\\Danila\\Documents\\git\\laba4-computer-graphics\\laba4-computer-graphics\\Laba4\\Laba4.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml-system\\2.4.2\\sfml-system.2.4.2.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml-system.redist\\2.4.2\\sfml-system.redist.2.4.2.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml.audio\\2.5.0\\sfml.audio.2.5.0.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml.graphics\\2.5.0\\sfml.graphics.2.5.0.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml.net\\2.5.0\\sfml.net.2.5.0.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml.system\\2.5.0\\sfml.system.2.5.0.nupkg.sha512",
-    "C:\\Users\\ElizabethNN\\.nuget\\packages\\sfml.window\\2.5.0\\sfml.window.2.5.0.nupkg.sha512"
+    "C:\\Users\\Danila\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml-system\\2.4.2\\sfml-system.2.4.2.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml-system.redist\\2.4.2\\sfml-system.redist.2.4.2.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml.audio\\2.5.0\\sfml.audio.2.5.0.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml.graphics\\2.5.0\\sfml.graphics.2.5.0.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml.net\\2.5.0\\sfml.net.2.5.0.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml.system\\2.5.0\\sfml.system.2.5.0.nupkg.sha512",
+    "C:\\Users\\Danila\\.nuget\\packages\\sfml.window\\2.5.0\\sfml.window.2.5.0.nupkg.sha512"
   ],
   "logs": []
 }
