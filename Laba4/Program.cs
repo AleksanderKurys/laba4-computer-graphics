@@ -12,6 +12,8 @@ namespace Laba4
         public static uint width = 800;
         public static uint height = 800;
 
+        private static Random random = new Random();
+        
         static RenderWindow renderWindow = new RenderWindow(new SFML.Window.VideoMode(width, height), "Laba 4");
         static ParsedInputData data;
 
@@ -31,15 +33,20 @@ namespace Laba4
             backgroundDrawer.recursiveFill(new Vector2i(0, 0), data.background, Color.Black);
             pixelLayers.Add(backgroundDrawer.drawingLayer);
 
-            foreach (var figuresLayer in data.layers)
+            /*            foreach (var figuresLayer in data.layers)
             {
                 Drawer drawer = new Drawer(width, height);
                 foreach (var figure in figuresLayer)
                 {
-                    drawer.DrawFigure(figure, Color.Red, Color.Yellow);
+                    drawer.DrawFigure(figure, randomColor(), randomColor());
                 }
                 pixelLayers.Add(drawer.drawingLayer);
-            }
+            }*/
+
+            Drawer drawer = new Drawer(width, height);
+            pixelLayers.Add(drawer.drawingLayer);
+
+            drawer.DrawFigure(new Clipper().ClipFigures(data.layers[1][0], data.layers[2][0]), randomColor(), randomColor());
 
             var mergedLayer = MergePixelLayers(pixelLayers);
 
@@ -119,6 +126,14 @@ namespace Laba4
                 }
             }
             return baseLayer;
+        }
+        
+        private static SFML.Graphics.Color randomColor()
+        {
+            return new SFML.Graphics.Color((byte)random.Next(255),
+                (byte)random.Next(255),
+                (byte)random.Next(255),
+                255);
         }
     }
 }

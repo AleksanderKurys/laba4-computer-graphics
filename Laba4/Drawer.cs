@@ -20,6 +20,38 @@ namespace Laba4
             drawingLayer = new Color[drawingAreaHeight, drawingAreaWidth];
         }
 
+        public void DrawFigure(List<Vector2f> vertexes, SFML.Graphics.Color borderColor, SFML.Graphics.Color? fillColor = null)
+        {
+            int vertexesNumber = vertexes.Count;
+
+            Vector2f currentVertex = vertexes[0];
+
+            ddaLine(vertexes[0], vertexes[vertexesNumber - 1], borderColor);
+
+            for (int i = 1; i < vertexesNumber; i++)
+            {
+                ddaLine(currentVertex, vertexes[i], borderColor);
+                currentVertex = vertexes[i];
+            }
+
+            Vector2f? vertexInsideWindow = GetPointInsideWindow(vertexes);
+
+            if (vertexInsideWindow != null)
+            {
+                Vector2f pointInsideFigure = DrawingUtils.GetPointInsideFigure(vertexes);
+
+                while (!CheckPointInsideWindow(pointInsideFigure))
+                {
+                    pointInsideFigure = DrawingUtils.GetLineMiddle(pointInsideFigure, (Vector2f)vertexInsideWindow);
+                }
+
+                Vector2i fillStartPoint = new Vector2i((int)Math.Round(pointInsideFigure.X), (int)Math.Round(pointInsideFigure.Y));
+
+                if (fillColor != null) recursiveFill(fillStartPoint, (SFML.Graphics.Color)fillColor, borderColor);
+            }
+        }
+
+        
         public void ddaLine(Vector2f start, Vector2f end, Color color)
         {
             Vector2i startRounded = new Vector2i((int)Math.Ceiling(start.X), (int)Math.Ceiling(start.Y));
@@ -135,6 +167,16 @@ namespace Laba4
             var vertexes = DrawingUtils.GetFigureVertexes(figure);
 
             foreach (var vertex in vertexes)
+            {
+                if (CheckPointInsideWindow(vertex)) return vertex;
+            }
+
+            return null;
+        }
+        
+        public Vector2f? GetPointInsideWindow(List<Vector2f> figure)
+        {
+            foreach (var vertex in figure)
             {
                 if (CheckPointInsideWindow(vertex)) return vertex;
             }

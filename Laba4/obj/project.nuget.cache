@@ -1,17 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "lZL38MdM6DdB2dLnBNrd2AKv16fDjZUbq0kD9ULEXsQSwamacU1x681A7wV8envR99LJ6fyIhsIUK8GiZOsh/w==",
+  "dgSpecHash": "Cqe2BsvLuLIgEZiNCB3H2hH1Q0EFLolg0hLkw39bIYTX11diDEWRCc+LhSLGuEgtOvoodEDovBrQDbkKl4J8Ng==",
   "success": true,
-  "projectFilePath": "/Users/dunice/Projects/Laba4/Laba4/Laba4.csproj",
+  "projectFilePath": "/home/nikita/RiderProjects/laba4-computer-graphics/Laba4/Laba4.csproj",
   "expectedPackageFiles": [
-    "/Users/dunice/.nuget/packages/csfml/2.5.0/csfml.2.5.0.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml-system/2.4.2/sfml-system.2.4.2.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml-system.redist/2.4.2/sfml-system.redist.2.4.2.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml.audio/2.5.0/sfml.audio.2.5.0.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml.graphics/2.5.0/sfml.graphics.2.5.0.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml.net/2.5.0/sfml.net.2.5.0.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml.system/2.5.0/sfml.system.2.5.0.nupkg.sha512",
-    "/Users/dunice/.nuget/packages/sfml.window/2.5.0/sfml.window.2.5.0.nupkg.sha512"
+    "/home/nikita/.nuget/packages/csfml/2.5.0/csfml.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml-system/2.4.2/sfml-system.2.4.2.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml-system.redist/2.4.2/sfml-system.redist.2.4.2.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml.audio/2.5.0/sfml.audio.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml.graphics/2.5.0/sfml.graphics.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml.net/2.5.0/sfml.net.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml.system/2.5.0/sfml.system.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/sfml.window/2.5.0/sfml.window.2.5.0.nupkg.sha512",
+    "/home/nikita/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.11/microsoft.netcore.app.host.linux-x64.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }
