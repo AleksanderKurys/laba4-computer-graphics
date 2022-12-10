@@ -672,19 +672,19 @@
     ]
   },
   "packageFolders": {
-    "/home/nikita/.nuget/packages/": {}
+    "/Users/dunice/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nikita/RiderProjects/laba4-computer-graphics/Laba4/Laba4.csproj",
+      "projectUniqueName": "/Users/dunice/Projects/Laba4/Laba4/Laba4.csproj",
       "projectName": "Laba4",
-      "projectPath": "/home/nikita/RiderProjects/laba4-computer-graphics/Laba4/Laba4.csproj",
-      "packagesPath": "/home/nikita/.nuget/packages/",
-      "outputPath": "/home/nikita/RiderProjects/laba4-computer-graphics/Laba4/obj/",
+      "projectPath": "/Users/dunice/Projects/Laba4/Laba4/Laba4.csproj",
+      "packagesPath": "/Users/dunice/.nuget/packages/",
+      "outputPath": "/Users/dunice/Projects/Laba4/Laba4/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nikita/.nuget/NuGet/NuGet.Config"
+        "/Users/dunice/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -732,18 +732,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.11, 6.0.11]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }

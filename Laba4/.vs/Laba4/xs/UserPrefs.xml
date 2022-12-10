@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{FD947DE8-C72C-429B-848B-DD973AF8B135}|Default">
+  <MonoDevelop.Ide.ItemProperties.Laba4 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Clipper.cs">
+    <Files>
+      <File FileName="DataInput.cs" />
+      <File FileName="Program.cs" Line="139" Column="2" />
+      <File FileName="Clipper.cs" Line="44" Column="14" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Laba4" expanded="True">
+            <Node name="Laba4" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

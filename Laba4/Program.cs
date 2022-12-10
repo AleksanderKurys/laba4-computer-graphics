@@ -46,7 +46,10 @@ namespace Laba4
             Drawer drawer = new Drawer(width, height);
             pixelLayers.Add(drawer.drawingLayer);
 
-            drawer.DrawFigure(new Clipper().ClipFigures(data.layers[1][0], data.layers[2][0]), randomColor(), randomColor());
+            drawer.DrawFigure(data.layers[1][0], randomColor(), randomColor());
+            drawer.DrawFigure(data.layers[2][0], randomColor(), randomColor());
+
+            drawer.DrawFigure(Clipper.GetUnintersectedPolygon(data.layers[0][0], data.layers[1][0]), randomColor(), randomColor());
 
             var mergedLayer = MergePixelLayers(pixelLayers);
 
